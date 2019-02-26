@@ -26,13 +26,11 @@ export class HerosListComponent {
                     heroAttr.image_portrait = obj.image_portrait;
                     heroAttr.image_background = obj.image_splash;
                     this.heroAttrs.push(heroAttr);
-                    // var obj = JSON.parse(hero.attr);
                 });
             })
     }
 
     onScroll() {
-        // console.log('scrolled!');
         for(let i = 0; i < this.length; i++){
             this.heroAttrs.push(this.heroAttrs[i]);
         }

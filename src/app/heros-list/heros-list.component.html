@@ -19,8 +19,18 @@
             [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false">
 
             <div class="col-md-6 col-sm-12" *ngFor="let hero of heroAttrs | filterBy: userFilter">
-                <div class="card card-inverse text-center"
+                <div class="card card-inverse text-center" *ngIf="hero.image_background"
                     [ngStyle]="{'background-image': 'url(' + hero.image_background + ')'}">
+                    <div class="card-body">
+                        <div class="card-block">
+                            <img src={{hero.image_portrait}} alt="element 05" width="250" class="mb-1">
+                            <h4 class="card-title">{{hero.name}}</h4>
+                            <p class="card-text">{{hero.slug}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-inverse text-center" *ngIf="!hero.image_background"
+                    [ngStyle]="{'background-color': '#4a3777'}">
                     <div class="card-body">
                         <div class="card-block">
                             <img src={{hero.image_portrait}} alt="element 05" width="250" class="mb-1">
