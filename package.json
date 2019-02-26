@@ -1,14 +1,15 @@
 {
-  "name": "apex",
+  "name": "code-challenge",
   "version": "4.1.0",
   "license": "",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
@@ -39,6 +40,7 @@
     "core-js": "^2.5.7",
     "d3": "^5.4.0",
     "datatables.net": "^1.10.15",
+    "express": "^4.16.4",
     "intl": "^1.2.5",
     "jquery": "^3.2.1",
     "ng-chartist": "^1.1.1",
@@ -57,6 +59,7 @@
     "ngx-ui-switch": "^6.0.3",
     "node-sass": "^4.11.0",
     "nouislider": "^11.1.0",
+    "path": "^0.12.7",
     "resize-observer-polyfill": "^1.5.0",
     "rxjs": "^6.2.0",
     "screenfull": "^3.3.1",
@@ -74,6 +77,7 @@
     "@types/jasmine": "^2.8.8",
     "@types/node": "^10.3.1",
     "codelyzer": "^4.3.0",
+    "enhanced-resolve": "^4.1.0",
     "jasmine-core": "^3.1.0",
     "jasmine-spec-reporter": "^4.2.1",
     "karma": "^2.0.2",
@@ -87,5 +91,9 @@
     "ts-node": "^6.1.0",
     "tslint": "^5.10.0",
     "typescript": "2.7.2"
+  },
+  "engines": {
+    "node": "9.4.0",
+    "npm": "3.10.10"
   }
 }
