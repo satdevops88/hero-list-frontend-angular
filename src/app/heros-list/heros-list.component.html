@@ -1,0 +1,36 @@
+<!-- Background variants section start -->
+<section id="heros-list">
+    <div class="input-group search-form">
+        <input type="text" class="form-control" [(ngModel)]="userFilter.name" placeholder="Search" aria-describedby="search">
+        <div class="input-group-append">
+            <span class="input-group-text" id="search"><i class="ft-search"></i></span>
+        </div>
+    </div>
+    <div class="row text-left">
+        <div class="col-12 mt-3 mb-1">
+            <div class="content-header">Hero List</div>
+            <p class="content-sub-header">The application should support following features.
+                <code>Interface to display list of heros</code> and <code>Infinite scroll pagination</code></p>
+        </div>
+    </div>
+    <div class="row" matchHeight="card">
+
+        <div class="row search-results" infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollUpDistance]="2"
+            [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false">
+
+            <div class="col-md-6 col-sm-12" *ngFor="let hero of heroAttrs | filterBy: userFilter">
+                <div class="card card-inverse text-center"
+                    [ngStyle]="{'background-image': 'url(' + hero.image_background + ')'}">
+                    <div class="card-body">
+                        <div class="card-block">
+                            <img src={{hero.image_portrait}} alt="element 05" width="250" class="mb-1">
+                            <h4 class="card-title">{{hero.name}}</h4>
+                            <p class="card-text">{{hero.slug}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Background variants section end -->

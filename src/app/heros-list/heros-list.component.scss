@@ -1,0 +1,15 @@
+#heros-list {
+    .card {
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .search-results {
+        height: 35rem;
+        overflow: scroll;
+        width: 100%;
+    }
+    .search-form {
+        width: 320px;
+        float: right;
+    }
+}
